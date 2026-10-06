@@ -10,7 +10,7 @@ const NOTIFICATION_KEY = 'reservation';
 const fieldSchema = field => {
   let value = z.string().trim().min(1, `${field.label} is required.`).max(300, `${field.label} is too long.`);
   if (field.type === 'email') value = value.email('Enter a valid email address.').transform(s => s.toLowerCase());
-  return value;
+  return z.preprocess(v => v ?? '', value);
 };
 export const submissionSchema = z.object(Object.fromEntries(config.fields.map(f => [f.name, fieldSchema(f)])));
 

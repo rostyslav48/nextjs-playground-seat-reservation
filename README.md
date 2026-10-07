@@ -1,5 +1,7 @@
 # Workshop Seat Reservation
 
+> **Playground repo.** A Next.js experiment, not production code and not actively maintained.
+
 Reserve one of a fixed number of workshop seats. This small application demonstrates **Transactional capacity checks** with Next.js.
 
 ## What it does
